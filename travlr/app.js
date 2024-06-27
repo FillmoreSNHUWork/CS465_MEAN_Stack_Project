@@ -5,19 +5,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors'); // Import CORS middleware
 
 // Define routers
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
-var travelRouter = require('./app_server/routes/travel')
+var travelRouter = require('./app_server/routes/travel');
 var apiRouter = require('./app_api/routes/index');
 
 var handlebars = require('hbs');
 const passport = require('passport');
 
-// Bring DB in
-require('./app_api/models/db')
-
+// Bring in the database connection and passport configuration
+require('./app_api/models/db');
 require('./app_api/config/passport');
 
 var app = express();
@@ -25,7 +25,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 
-// register handlebar partials 
+// register handlebars partials 
 handlebars.registerPartials(__dirname + '/app_server/views/partials');
 
 app.set('view engine', 'hbs');
@@ -37,13 +37,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 
-// Enable CORS
-app.use('/api', (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  next();
-});
+// Enable CORS (front-end/back-end communication)
+app.use(cors({
+  origin: 'http://localhost:4200',
+  methods: 'GET, POST, PUT, DELETE',
+  allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+}));
 
 // wire routes to controllers
 app.use('/', indexRouter);
@@ -58,11 +57,11 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use((err, req, res, next) => {
-  // set locals, only providing error in development
   if (err.name === 'UnauthorizedError') {
-    res
-    .status(401)
-    .json({"message": err.name + ": " + err.message});
+    res.status(401).json({ "message": err.name + ": " + err.message });
+  } else {
+    res.status(err.status || 500);
+    res.json({ "message": err.message });
   }
 });
 
