@@ -22,12 +22,6 @@
 | Version | Date     | Author          | Comments                                                      |
 |---------|----------|-----------------|---------------------------------------------------------------|
 | 1.0     | 05/26/24 | Anthony Fillmore| Initial updates, executive summary, design constraints, and system architecture overview. |
-
----
-
-## Instructions
-Fill in all bracketed information on page one (the cover page), in the Document Revision History table, and below each header. Under each header, remove the bracketed prompt and write your own paragraph response covering the indicated information.
-
 ---
 
 ## Executive Summary
