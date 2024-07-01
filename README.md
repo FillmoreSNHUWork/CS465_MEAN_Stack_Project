@@ -1,6 +1,35 @@
+
 # <Name of Software Application>
 ## CS 465 Project Software Design Document
 ### Version 1.0
+## Architecture
+
+### Frontend Development Types
+- **Express HTML & JavaScript**: Used for server-side rendering, creating static and dynamic pages, and handling client requests.
+- **Single-Page Application (SPA)**: Utilized Angular to create a dynamic, responsive user experience with faster load times and seamless interactions.
+
+### NoSQL MongoDB Database
+The backend used MongoDB for its flexibility in handling unstructured data, scalability, and ease of integration with JavaScript through its BSON format, making it ideal for the dynamic data needs of our application.
+
+## Functionality
+
+### JSON vs. JavaScript
+- **JavaScript**: A programming language used for creating dynamic web content.
+- **JSON**: A lightweight data-interchange format used to transfer data between the frontend and backend, ensuring efficient communication.
+
+### Code Refactoring Instances
+- **Example**: Refactored the trip management components to use a common service for API calls, reducing redundancy.
+- **Benefits**: Improved code maintainability, reduced bugs, and enhanced UI consistency through reusable components.
+
+## Testing
+
+### API Testing and Security
+Testing methods include unit testing for individual functions, integration testing for API endpoints, and end-to-end testing for the entire application flow. Security layers such as JWT tokens were tested to ensure secure access to endpoints.
+
+## Reflection
+
+### Course Impact on Professional Goals
+This course enhanced my skills in full-stack development, particularly in creating SPAs and managing NoSQL databases. I developed proficiency in Angular, Node.js, and MongoDB, making me a more versatile and marketable candidate in the tech industry.
 
 ---
 
