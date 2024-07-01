@@ -1,5 +1,5 @@
 
-# <Name of Software Application>
+# Travlr Travel Website Application
 ## CS 465 Project Software Design Document
 ### Version 1.0
 ## Architecture
@@ -9,7 +9,7 @@
 - **Single-Page Application (SPA)**: Utilized Angular to create a dynamic, responsive user experience with faster load times and seamless interactions.
 
 ### NoSQL MongoDB Database
-The backend used MongoDB for its flexibility in handling unstructured data, scalability, and ease of integration with JavaScript through its BSON format, making it ideal for the dynamic data needs of our application.
+The backend used MongoDB for its flexibility in handling unstructured data. It also provides scalability and ease of integration with JavaScript through its BSON format, making it perfect for the dynamic data needs of our application.
 
 ## Functionality
 
@@ -18,20 +18,48 @@ The backend used MongoDB for its flexibility in handling unstructured data, scal
 - **JSON**: A lightweight data-interchange format used to transfer data between the frontend and backend, ensuring efficient communication.
 
 ### Code Refactoring Instances
-- **Example**: Refactored the trip management components to use a common service for API calls, reducing redundancy.
-- **Benefits**: Improved code maintainability, reduced bugs, and enhanced UI consistency through reusable components.
+## Refactored and Dynamic Components
+
+1. **Trip Management Service**:
+   - Centralized API calls for CRUD operations.
+   - Reduced redundancy and improved maintainability.
+
+2. **User Authentication**:
+   - Created reusable authentication functions for login and registration.
+   - Simplified security management across different components.
+
+3. **UI Components**:
+   - Modularized common UI elements like headers, footers, and navigation bars.
+   - Enhanced consistency and ease of updates.
+
+4. **Form Handling**:
+   - Implemented dynamic form validation and error handling.
+   - Improved user experience with real-time feedback.
+
+5. **Routing**:
+   - Used Angular’s Router for dynamic navigation.
+   - Streamlined route management and lazy loading of components.
+
+6. **State Management**:
+   - Applied NgRx for managing application state.
+   - Improved performance and predictability of the app.
+
+7. **Data Services**:
+   - Consolidated data fetching logic into services.
+   - Reduced duplication and made the codebase cleaner.
 
 ## Testing
 
 ### API Testing and Security
-Testing methods include unit testing for individual functions, integration testing for API endpoints, and end-to-end testing for the entire application flow. Security layers such as JWT tokens were tested to ensure secure access to endpoints.
+End-to-end was used to test the entire application flow. Security layers such as JWT tokens were tested to ensure secure access to endpoints. We tested both the front, back and middleware individually. 
 
 ## Reflection
 
 ### Course Impact on Professional Goals
-This course enhanced my skills in full-stack development, particularly in creating SPAs and managing NoSQL databases. I developed proficiency in Angular, Node.js, and MongoDB, making me a more versatile and marketable candidate in the tech industry.
+This course significantly enhanced my skills in full-stack development, particularly in creating single-page applications (SPAs) and managing NoSQL databases. Through hands-on projects, I developed proficiency in Angular, Node.js, and MongoDB, which are crucial for modern web development. 
 
----
+Specifically, I learned to build dynamic, responsive frontends using Angular, create backends with Node.js and Express, and efficiently manage data with MongoDB. This experience directly translates to my current role as a software engineer, where these technologies are frequently used (api, back-end db ect). The practical knowledge gained has improved my ability to design scalable and maintainable applications, and gives me a great starting point for building future full-stack web-based applications.
+
 
 ## Table of Contents
 1. [Document Revision History](#document-revision-history)
